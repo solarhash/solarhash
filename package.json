@@ -1,0 +1,14 @@
+{
+  "name": "solarhash",
+  "version": "0.0.0",
+  "description": "A hashart generator with a Solarpunk style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chance Hudson",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "bn.js": "^5.1.3"
+  }
+}
