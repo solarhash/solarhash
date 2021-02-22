@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const characters = `abcdefghijklmnopqrstuvwxyz-=_+@#!$%^*&(),./<>?:";~`
+const characters = `abcdefghijklmnopqrstuvwxyz-=_+@#!$%^*&()1234567890/<>?:";`
 
 const images = []
 for (let i = 0; i < 32; i++) {
@@ -16,7 +16,7 @@ for (let i = 0; i < 32; i++) {
         continue
       }
       if (y === 0 || y === image.height - 1) {
-        data += '-'
+        data += '~'
         continue
       }
       data += characters[Math.floor(Math.random() * characters.length)]
