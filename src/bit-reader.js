@@ -21,7 +21,12 @@ class BitReader {
     if (val < max) return val
     // otherwise we need to take a modulus from another part of the hash
     // take this value based on the current offset as well
-    return parseInt(this.binaryString.slice(-this.offset), 2) % max
+    let partialBits = this.binaryString.slice(-this.offset)
+    if (partialBits.length < bits) {
+      partialBits += this.binaryString.slice(0, bits - partialBits.length)
+    }
+    return parseInt(partialBits, 2) % max
+
   }
 
   readBits(count, exact = false) {
