@@ -1,7 +1,7 @@
 const BitReader = require('./src/bit-reader')
 const LargeImages = require('./src/large-images.json')
 
-function generateArt(_hash = '', verbose = false) {
+function generateArt(_hash = '') {
   // remove the leading 0x, if present
   const hash = _hash.indexOf('0x') === 0 ? _hash.slice(2) : _hash
   // make sure it's hexadecimal
@@ -44,15 +44,15 @@ function generateArt(_hash = '', verbose = false) {
     }
   }
 
-  if (verbose) {
-    console.log(`Consumed ${reader.bitsConsumed} of ${reader.binaryString.length} bits`)
-  }
-
   let art = ''
   for (const line of grid) {
     art += line.join('') + '\n'
   }
-  return art
+  return {
+    art,
+    bitsConsumed: reader.bitsConsumed,
+    bits: reader.binaryString.length,
+  }
 }
 
 module.exports = generateArt
