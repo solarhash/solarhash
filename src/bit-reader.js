@@ -9,7 +9,7 @@ class BitReader {
     }
     this.offset = 0
     this.bitsConsumed = 0
-    this.binaryString = new BN(this.hash, 16).toString(2, 160)
+    this.binaryString = new BN(this.hash, 16).toString(2)
     // console.log(this.binaryString, this.hash)
   }
 
